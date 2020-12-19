@@ -33,9 +33,7 @@ public class Employer {
     }
 
     @Override
-    public int hashCode() {
-        return Objects.hash(getId());
-    }
+    public int hashCode() {return Objects.hash(getId());}
 
     // Getters and Setters:
 
