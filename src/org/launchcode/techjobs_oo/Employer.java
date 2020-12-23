@@ -12,9 +12,9 @@ public class Employer {
         nextId++;
     }
 
-    public Employer(String value) {
+    public Employer(String aValue) { //forked code had (String value) updated code
         this();
-        this.value = value;
+        this.value = aValue; // forked code had this.value=value; updated code
     }
 
     // Custom toString, equals, and hashCode methods:
@@ -34,6 +34,7 @@ public class Employer {
 
     @Override
     public int hashCode() {return Objects.hash(getId());}
+
 
     // Getters and Setters:
 
