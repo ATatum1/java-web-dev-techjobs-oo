@@ -12,6 +12,7 @@ public class Job {
     private Location location;
     private PositionType positionType;
     private CoreCompetency coreCompetency;
+    private static final String DEFAULT_MESSAGE = "No Data Available";
 
     // TODO: Add two constructors - one to initialize a unique ID and a second to initialize the
     //  other five fields. The second constructor should also call the first in order to initialize
@@ -33,6 +34,23 @@ public class Job {
 
     // TODO: Add custom equals and hashCode methods. Consider two Job objects "equal" when their id fields
     //  match.
+
+    @Override
+    public String toString(){
+
+
+
+        return String.format("ID: "+id+'\n'+"Name: "+name+'\n'+"Employer: "+employer+'\n'+"Location: "+location+'\n'+"Position Type: "+positionType+'\n'+"Core Competency: "+coreCompetency+" ",
+                //id == null ? DEFAULT_MESSAGE : id,
+                name == "  " ? DEFAULT_MESSAGE : name,
+                 ? DEFAULT_MESSAGE : employer,
+                location == null ? DEFAULT_MESSAGE : location,
+                positionType == null ? DEFAULT_MESSAGE : positionType,
+                coreCompetency == null ? DEFAULT_MESSAGE : coreCompetency);
+
+
+
+    }
 
     @Override
     public boolean equals(Object o) {

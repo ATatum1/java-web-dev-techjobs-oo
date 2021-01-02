@@ -15,6 +15,8 @@ public class JobTest {
     Job test_jobFull;
     Job test_jobEqual1;
     Job test_jobEqual2;
+    Job test_jobEmptyField;
+    //Job test_jobString;
 
     @Before
     public void setUp(){
@@ -23,6 +25,8 @@ public class JobTest {
         test_jobFull = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
         test_jobEqual1 = new Job("Product tester", new Employer("Jelly Belly"), new Location("Fairfield"), new PositionType("Quality control"), new CoreCompetency("sweet tooth"));
         test_jobEqual2 = new Job("Product tester", new Employer("Jelly Belly"), new Location("Fairfield"), new PositionType("Quality control"), new CoreCompetency("sweet tooth"));
+        test_jobEmptyField = new Job("Product tester", new Employer("ACME"), new Location(""), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        //test_jobString = new Job()
     }
 
     //) Test the Empty Constructor
@@ -83,14 +87,25 @@ public class JobTest {
         }
 
 
+        @Test
+        public void testReturnedStringHasBlankLineBeforeAndAfterJobInfo(){ ///may
+            String testString = test_jobFull.toString();
+            //assertEquals(" Product tester ACME Desert Quality control Persistence ",test_jobFull.toString());
+            assertTrue("true",Character.isWhitespace(testString.charAt(0))&&Character.isWhitespace(testString.charAt(testString.length() - 1)));
+        }
 
-    //Student bono1 = new Student("Paul David Hewson", 4);
-    //Student bono2 = new Student("Bono", 4);
+        @Test
+        public void testReturnsFieldLabelWithDataOnOwnLine(){
+            assertEquals("ID: 3"+"Name: Product tester"+'\n'+"Employer: ACME"+'\n'+"Location: Desert"+'\n'+"Position Type: Quality control"+'\n'+"Core Competency: Persistence"+" ",test_jobFull.toString());
+        }
+    //test_jobFull = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
 
-    //if (bono1.equals(bono2)) {
-    //    System.out.println(bono1.getName() +
-    //            " is the same as " + bono2.getName());
-    //}
+        @Test
+        public void testIfFieldIsEmpty(){
+            //assertEquals("ID: 3"+"Name: Product tester"+'\n'+"Employer: ACME"+'\n'+"Location: Desert"+'\n'+"Position Type: Quality control"+'\n'+"Core Competency: Persistence"+" ")
+            assertEquals("ID: 6"+'\n'+"Name: Product tester"+'\n'+"Employer: ACME"+'\n'+"Location: Data not available"+'\n'+"Position Type: Quality control"+'\n'+"Core Competency: Persistence"+" ",test_jobEmptyField.toString());
+        //test_jobEmptyField = new Job("Product tester", new Employer("ACME"), new Location(""), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+    }
 
     }
 
