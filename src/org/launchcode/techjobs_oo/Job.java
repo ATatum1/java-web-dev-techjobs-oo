@@ -37,18 +37,50 @@ public class Job {
 
     @Override
     public String toString(){
+        String employerString = String.valueOf(employer);
+        String locationString = String.valueOf(location);
+        String positionTypeString = String.valueOf(positionType);
+        String coreCompetencyString = String.valueOf(coreCompetency);
+
+//
+//
+//        return String.format("ID: "+id+'\n'+"Name: "+name+'\n'+"Employer: "+employer+employer'\n'+"Location: "+location+'\n'+"Position Type: "+positionType+'\n'+"Core Competency: "+coreCompetency+" ",
+//                //id == null ? DEFAULT_MESSAGE : id,
+//                name == "  " ? DEFAULT_MESSAGE : name,
+//                employerString == "  " ? DEFAULT_MESSAGE : employer,
+//                locationString == null ? DEFAULT_MESSAGE : location,
+//                positionType == null ? DEFAULT_MESSAGE : positionType,
+//                coreCompetency == null ? DEFAULT_MESSAGE : coreCompetency);
+
+        if(name.isEmpty()){
+            name =  "Data not available";
+        }
+
+        if(employerString.isEmpty()){
+            employerString = "Data not available";
+        }else{
+            employerString = "";
+        }
+
+        if(locationString.isEmpty()){
+            locationString = "Data not available";
+        }else{
+            locationString = "";
+        }
 
 
+        if(positionTypeString.isEmpty()) {
+            positionTypeString = "Data not available";
 
-        return String.format("ID: "+id+'\n'+"Name: "+name+'\n'+"Employer: "+employer+'\n'+"Location: "+location+'\n'+"Position Type: "+positionType+'\n'+"Core Competency: "+coreCompetency+" ",
-                //id == null ? DEFAULT_MESSAGE : id,
-                name == "  " ? DEFAULT_MESSAGE : name,
-                 ? DEFAULT_MESSAGE : employer,
-                location == null ? DEFAULT_MESSAGE : location,
-                positionType == null ? DEFAULT_MESSAGE : positionType,
-                coreCompetency == null ? DEFAULT_MESSAGE : coreCompetency);
+        }else{
+            positionTypeString= "";
 
-
+        }if(coreCompetencyString.isEmpty()){
+            coreCompetencyString = "Data not available";
+        }else{
+            coreCompetencyString = "";
+        }
+        return ("ID: " + id + '\n' + "Name: " + name + '\n' + "Employer: " + employer + employerString + '\n' + "Location: " + location + locationString +'\n' + "Position Type: " + positionType + positionTypeString +'\n' + "Core Competency: " + coreCompetency + coreCompetencyString+" ");
 
     }
 
