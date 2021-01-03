@@ -80,7 +80,7 @@ public class Job {
         }else{
             coreCompetencyString = "";
         }
-        return (" "+"ID: " + id + '\n' + " Name: " + name + '\n' + " Employer: " + employer + employerString + '\n' + " Location: " + location + locationString +'\n' + " Position Type: " + positionType + positionTypeString +'\n' + " Core Competency: " + coreCompetency + coreCompetencyString+" ");
+        return (" "+"ID: " + id + '\n' + " Name: " + name + '\n' + " Employer: " + employer + employerString + '\n' + " Location: " + location + locationString +'\n' + " Position Type: " + positionType + positionTypeString +'\n' + " Core Competency: " + coreCompetency + coreCompetencyString+'\n');
 
     }
 
