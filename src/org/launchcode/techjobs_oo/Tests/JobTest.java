@@ -96,14 +96,14 @@ public class JobTest {
 
         @Test
         public void testReturnsFieldLabelWithDataOnOwnLine(){
-            assertEquals("ID: 3"+"Name: Product tester"+'\n'+"Employer: ACME"+'\n'+"Location: Desert"+'\n'+"Position Type: Quality control"+'\n'+"Core Competency: Persistence"+" ",test_jobFull.toString());
+            assertEquals(" ID: 3"+'\n'+" Name: Product tester"+'\n'+" Employer: ACME"+'\n'+" Location: Desert"+'\n'+" Position Type: Quality control"+'\n'+" Core Competency: Persistence"+" ",test_jobFull.toString());
         }
     //test_jobFull = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
 
         @Test
         public void testIfFieldIsEmpty(){
             //assertEquals("ID: 3"+"Name: Product tester"+'\n'+"Employer: ACME"+'\n'+"Location: Desert"+'\n'+"Position Type: Quality control"+'\n'+"Core Competency: Persistence"+" ")
-            assertEquals("ID: 6"+'\n'+"Name: Product tester"+'\n'+"Employer: ACME"+'\n'+"Location: Data not available"+'\n'+"Position Type: Quality control"+'\n'+"Core Competency: Persistence"+" ",test_jobEmptyField.toString());
+            assertEquals(" ID: 6"+'\n'+" Name: Product tester"+'\n'+" Employer: ACME"+'\n'+" Location: Data not available"+'\n'+" Position Type: Quality control"+'\n'+" Core Competency: Persistence"+" ",test_jobEmptyField.toString());
         //test_jobEmptyField = new Job("Product tester", new Employer("ACME"), new Location(""), new PositionType("Quality control"), new CoreCompetency("Persistence"));
     }
 
